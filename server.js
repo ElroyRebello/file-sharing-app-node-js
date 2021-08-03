@@ -7,7 +7,7 @@ const cors = require('cors');
 // Cors 
 const corsOptions = {
   origin: process.env.ALLOWED_CLIENTS.split(',')
-  // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
+   ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 }
 
 // Default configuration looks like
@@ -33,6 +33,6 @@ app.set('view engine', 'ejs');
 app.use('/api/files', require('./routes/files'));
 app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
-
+app.use('/',require('./routes/start'))
 
 app.listen(PORT, console.log(`Listening on port ${PORT}.`));
